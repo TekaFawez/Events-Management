@@ -1,0 +1,69 @@
+#images h1 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    text-transform: uppercase;
+    color: black;
+}
+
+#images h2 {
+    color: black;
+    margin: 10px 0 0 0;
+    font-size: 24px;
+}
+
+.bordure {
+    background-color: #c2e8f9;
+    border-radius: 6px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin-bottom: 24px;
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    padding: 24px 24px 0;
+}
+
+h4 {
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.main-page-content h2,
+.main-page-content h3,
+.main-page-content h4,
+.main-page-content h5 {
+    margin-top: 0;
+}
+
+blockquote,
+body,
+dd,
+dl,
+figcaption,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+li,
+ol[class],
+p,
+ul[class] {
+    margin: 0;
+}
+
+h1+p {
+    font-size: large;
+}
+
+p {
+    font-size: medium;
+}
