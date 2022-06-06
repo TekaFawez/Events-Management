@@ -18,12 +18,13 @@ import { SharedModule } from './shared/shared.module';
   ],
   imports: [
     CoreModule,
+    RoutesModule,
     LayoutsModule,
     ModulesModule,
     PagesModule,
     SharedModule,
     BrowserModule,
-    RoutesModule,
+
     AppRoutingModule
   ],
   exports:[LayoutsModule],
