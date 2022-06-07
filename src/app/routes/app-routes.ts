@@ -1,5 +1,6 @@
 import { Routes } from "@angular/router";
 import { MainLayoutComponent } from "../layouts/main-layout/main-layout.component";
+import { AddListComponent } from "../modules/events/components/add-list/add-list.component";
 import { AdminPageComponent } from "../pages/admin-page/admin-page/admin-page.component";
 import { LoginComponent } from "../pages/login/login.component";
 import { MaintenanceErrorComponent } from "../pages/maintenance-error/maintenance-error.component";
@@ -15,7 +16,13 @@ export const appRoutes: Routes = [
     {
         path: "",
         component: MainLayoutComponent,
+        //
         children:[
+          {
+            path: "",
+            //component: EventsListComponent
+            loadChildren: () => import('../modules/home/home.module').then((m)=>m.HomeModule)
+        },
             {
                 path: "attendees",
                 //component: EventsListComponent
@@ -25,9 +32,18 @@ export const appRoutes: Routes = [
                 path: "events",
                 //component: AttendeesListComponent
                 loadChildren: () => import('../modules/events/events.module').then((m)=>m.EventsModule)
-            }
+            },
+        //     {
+        //       path: "add-event",
+
+        //       loadChildren: () => import('../modules/events/events.module').then((m)=>m.EventsModule)
+        //   }
         ]
     },
+    {
+      path: "add-event",
+      component: AddListComponent
+  },
     {
         path: "login",
         component: LoginComponent
