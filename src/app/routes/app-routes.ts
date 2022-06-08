@@ -16,7 +16,7 @@ export const appRoutes: Routes = [
     {
         path: "",
         component: MainLayoutComponent,
-        //
+
         children:[
           {
             path: "",
@@ -43,6 +43,10 @@ export const appRoutes: Routes = [
     {
       path: "add-event",
       component: AddListComponent
+  },
+  {
+    path : 'add-event/:id',
+    component : AddListComponent
   },
     {
         path: "login",

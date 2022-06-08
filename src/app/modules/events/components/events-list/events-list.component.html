@@ -35,6 +35,7 @@
                 <div class="row">
                     <div class="col-sm-8">
                         <h2>List <b>Events</b></h2>
+
                     </div>
                     <div class="col-sm-4">
 
@@ -45,23 +46,26 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
+                        <th>ID</th>
+
                         <th>Name</th>
                         <th>places</th>
 
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody *ngFor="let event of events">
                     <tr>
-                        <td>football</td>
-                        <td>500</td>
+                        <td> {{ event.id }} </td>
+                        <td>{{event.name}}</td>
+                        <td>{{event.place}}</td>
                         <td>
                             <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                            <a class="edit" title="Edit" data-toggle="tooltip" (click)=" updateEvent(event.id)"><i class="material-icons">&#xE254;</i></a>
+                            <a class="delete" title="Delete" data-toggle="tooltip" (click)="deletEvent(event.id)"><i class="material-icons">&#xE872;</i></a>
                         </td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <td>band rocker</td>
                         <td>200</td>
 
@@ -70,8 +74,8 @@
                             <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                             <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                         </td>
-                    </tr>
-                    <tr>
+                    </tr> -->
+                    <!-- <tr>
                         <td>cinema Palac</td>
                         <td>2</td>
 
@@ -80,7 +84,7 @@
                             <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                             <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                         </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
         </div>
