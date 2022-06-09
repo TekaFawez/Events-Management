@@ -6,10 +6,10 @@ import { AddListComponent } from './components/add-list/add-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 export const routes: Routes = [
-  {
-     path: '',
-     component: EventsListComponent
-  },
+  // {
+  //    path: '',
+  //    component: EventsListComponent
+  // },
 //   {
 //     path: '',
 //     component: AddListComponent,
@@ -22,7 +22,7 @@ export const routes: Routes = [
     AddListComponent
   ],
   imports: [
-    RouterModule.forChild(routes),
+    RouterModule.forRoot(routes),
     CommonModule,
     FormsModule,
 ReactiveFormsModule,

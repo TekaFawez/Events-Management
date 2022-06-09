@@ -1,7 +1,9 @@
 import { Routes } from "@angular/router";
 import { MainLayoutComponent } from "../layouts/main-layout/main-layout.component";
 import { AddListComponent } from "../modules/events/components/add-list/add-list.component";
+import { EventsListComponent } from "../modules/events/components/events-list/events-list.component";
 import { AdminPageComponent } from "../pages/admin-page/admin-page/admin-page.component";
+import { DashboardComponent } from "../pages/admin-page/admin-page/dashboard/dashboard.component";
 import { LoginComponent } from "../pages/login/login.component";
 import { MaintenanceErrorComponent } from "../pages/maintenance-error/maintenance-error.component";
 import { NotFoundComponent } from "../pages/not-found/not-found.component";
@@ -28,11 +30,11 @@ export const appRoutes: Routes = [
                 //component: EventsListComponent
                 loadChildren: () => import('../modules/attendees/attendees.module').then((m)=>m.AttendeesModule)
             },
-            {
-                path: "events",
-                //component: AttendeesListComponent
-                loadChildren: () => import('../modules/events/events.module').then((m)=>m.EventsModule)
-            },
+            // {
+            //     path: "events",
+            //     //component: AttendeesListComponent
+            //     loadChildren: () => import('../modules/events/events.module').then((m)=>m.EventsModule)
+            // },
         //     {
         //       path: "add-event",
 
@@ -66,7 +68,15 @@ export const appRoutes: Routes = [
     },
     {
       path: "admin",
-      component: AdminPageComponent
+      component: AdminPageComponent,
+      children : [
+        {path: '', component : DashboardComponent},
+        {
+          path:"events",
+          component:EventsListComponent
+        }
+      ]
+
   },
     {
         path: "**",

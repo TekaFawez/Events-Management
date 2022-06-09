@@ -9,7 +9,8 @@ import { appRoutes } from './app-routes';
   declarations: [],
   imports: [
     RouterModule.forRoot(appRoutes),
-    CommonModule
+    CommonModule,
+    RouterModule
   ]
 })
 export class RoutesModule { }
