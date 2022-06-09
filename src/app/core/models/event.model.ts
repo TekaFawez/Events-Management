@@ -1,6 +1,8 @@
-import { UserModel } from "./user.model";
+// import { UserModel } from "./user.model";
 
 export class EventModel {
-    id: number | undefined;
-    owner: UserModel | undefined
+    id?: string;
+    name?:String;
+    place?:number
+    // owner: UserModel | undefined
 }

@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-primary my-3" [routerLink]="['/events']">Retour</button>
+            <hr>
+            <h1> <input type="text" [value]="editmode ? 'Edit event' : 'Add event' "> </h1>
+        </div>
+    </div>
+    <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="form-group col-6">
+                <label for="text">ID</label>
+                <input type="number" name="id" id="id" formControlName="id" class="form-control">
+                <small *ngIf="eventsForm['id'].invalid && isSubmitted" class="p-error">id is required</small
+                  >
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="text">name</label>
+            <input type="text" name="name" id="name" class="form-control" formControlName="name">
+            <small *ngIf="eventsForm['name'].invalid && isSubmitted" class="p-error">Name is required</small
+          >
+
+        </div>
+        <div class="form-group">
+            <label for="number">nombre places</label>
+            <input type="number" name="place" id="place" class="form-control" formControlName="place">
+            <small *ngIf="eventsForm['place'].invalid && isSubmitted" class="p-error">place is required</small
+              >
+        </div>
+
+
+
+        <div class="form-row">
+            <div class="form-group col">
+
+                <input type="submit" [value]="editmode ? 'Edit event' : 'Add event' " class="btn btn-info">
+            </div>
+        </div>
+
+    </form>
+</div>
