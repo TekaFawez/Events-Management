@@ -10,12 +10,15 @@ import { EventModel } from 'src/app/core/models/event.model';
 })
 export class EventsListComponent implements OnInit {
   events : EventModel[]=[];
+
   constructor(private eventsService:EventService, private route:Router ) {
 
   }
 
+
   ngOnInit(): void {
     this.getEvents()
+
 
   }
   getEvents(){
@@ -37,5 +40,6 @@ export class EventsListComponent implements OnInit {
 
 
   }
+
 
 }
