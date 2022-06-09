@@ -6,16 +6,22 @@ import { RegisterComponent } from './register/register.component';
 import { MaintenanceErrorComponent } from './maintenance-error/maintenance-error.component';
 import { RouterModule } from '@angular/router';
 import { AdminPageComponent } from './admin-page/admin-page/admin-page.component';
+import { SidemenueComponent } from './admin-page/admin-page/sidemenue/sidemenue.component';
+import { AdminHeaderComponent } from './admin-page/admin-page/admin-header/admin-header.component';
 
 
 
 @NgModule({
   declarations: [
+
     NotFoundComponent,
     LoginComponent,
     RegisterComponent,
     MaintenanceErrorComponent,
-    AdminPageComponent
+    AdminPageComponent,
+    SidemenueComponent,
+    AdminHeaderComponent,
+
   ],
   imports: [
     CommonModule,

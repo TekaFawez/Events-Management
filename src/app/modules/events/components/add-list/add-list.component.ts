@@ -55,7 +55,7 @@ export class AddListComponent implements OnInit {
     creatEvent(evnt:EventModel){
     this.eventsService.postEvent(evnt).subscribe(()=>{
 
-      this.router.navigate(['events']);
+      this.router.navigate(['admin/events']);
 
     },
     (error)=>{
