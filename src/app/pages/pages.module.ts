@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { AdminPageComponent } from './admin-page/admin-page/admin-page.component';
 import { SidemenueComponent } from './admin-page/admin-page/sidemenue/sidemenue.component';
 import { AdminHeaderComponent } from './admin-page/admin-page/admin-header/admin-header.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -26,6 +27,9 @@ import { AdminHeaderComponent } from './admin-page/admin-page/admin-header/admin
   imports: [
     CommonModule,
     RouterModule,
+    FormsModule,
+ReactiveFormsModule,
+
 
   ]
 })

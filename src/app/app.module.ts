@@ -9,6 +9,7 @@ import { CoreModule } from './core/core.module';
 import { EventService } from './core/https/events.service';
 import { LayoutsModule } from './layouts/layouts.module';
 import { ModulesModule } from './modules/modules.module';
+import { LoginComponent } from './pages/login/login.component';
 import { PagesModule } from './pages/pages.module';
 import { RoutesModule } from './routes/routes.module';
 import { SharedModule } from './shared/shared.module';
@@ -31,9 +32,13 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
 
     AppRoutingModule,
-    FormsModule,
+
+//     FormsModule,
+// ReactiveFormsModule,
+FormsModule,
 ReactiveFormsModule,
 HttpClientModule,
+
 
   ],
   exports:[LayoutsModule],
