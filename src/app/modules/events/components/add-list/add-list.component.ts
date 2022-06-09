@@ -69,7 +69,7 @@ export class AddListComponent implements OnInit {
 
     this.eventsService.updateEvent(evnt).subscribe(()=>{
 
-      this.router.navigate(['events']);
+      this.router.navigate(['admin/events']);
 
     },
     (error)=>{

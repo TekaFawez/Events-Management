@@ -4,12 +4,13 @@ import { EventsListComponent } from './components/events-list/events-list.compon
 import { RouterModule, Routes } from '@angular/router';
 import { AddListComponent } from './components/add-list/add-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EventsComponent } from './components/events/events.component';
 
 export const routes: Routes = [
-  // {
-  //    path: '',
-  //    component: EventsListComponent
-  // },
+  {
+     path: '',
+     component: EventsComponent
+  },
 //   {
 //     path: '',
 //     component: AddListComponent,
@@ -19,10 +20,11 @@ export const routes: Routes = [
 @NgModule({
   declarations: [
     EventsListComponent,
-    AddListComponent
+    AddListComponent,
+    EventsComponent
   ],
   imports: [
-    RouterModule.forRoot(routes),
+    RouterModule.forChild(routes),
     CommonModule,
     FormsModule,
 ReactiveFormsModule,
