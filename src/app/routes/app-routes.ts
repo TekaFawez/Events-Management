@@ -30,11 +30,11 @@ export const appRoutes: Routes = [
                 //component: EventsListComponent
                 loadChildren: () => import('../modules/attendees/attendees.module').then((m)=>m.AttendeesModule)
             },
-            // {
-            //     path: "events",
-            //     //component: AttendeesListComponent
-            //     loadChildren: () => import('../modules/events/events.module').then((m)=>m.EventsModule)
-            // },
+            {
+                path: "event-user",
+                //component: AttendeesListComponent
+                loadChildren: () => import('../modules/events/events.module').then((m)=>m.EventsModule)
+            },
         //     {
         //       path: "add-event",
 
