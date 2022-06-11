@@ -9,6 +9,8 @@ import { AdminPageComponent } from './admin-page/admin-page/admin-page.component
 import { SidemenueComponent } from './admin-page/admin-page/sidemenue/sidemenue.component';
 import { AdminHeaderComponent } from './admin-page/admin-page/admin-header/admin-header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddUserComponent } from './admin-page/admin-page/users/add-user/add-user.component';
+import { UsersListComponent } from './admin-page/admin-page/users/users-list/users-list.component';
 
 
 
@@ -16,12 +18,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
 
     NotFoundComponent,
+    UsersListComponent,
+    AddUserComponent,
     LoginComponent,
     RegisterComponent,
     MaintenanceErrorComponent,
     AdminPageComponent,
     SidemenueComponent,
     AdminHeaderComponent,
+
+
 
   ],
   imports: [

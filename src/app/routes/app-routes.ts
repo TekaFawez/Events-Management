@@ -4,6 +4,8 @@ import { AddListComponent } from "../modules/events/components/add-list/add-list
 import { EventsListComponent } from "../modules/events/components/events-list/events-list.component";
 import { AdminPageComponent } from "../pages/admin-page/admin-page/admin-page.component";
 import { DashboardComponent } from "../pages/admin-page/admin-page/dashboard/dashboard.component";
+import { AddUserComponent } from "../pages/admin-page/admin-page/users/add-user/add-user.component";
+import { UsersListComponent } from "../pages/admin-page/admin-page/users/users-list/users-list.component";
 import { LoginComponent } from "../pages/login/login.component";
 import { MaintenanceErrorComponent } from "../pages/maintenance-error/maintenance-error.component";
 import { NotFoundComponent } from "../pages/not-found/not-found.component";
@@ -50,6 +52,14 @@ export const appRoutes: Routes = [
     path : 'add-event/:id',
     component : AddListComponent
   },
+  {
+    path: "add-user",
+    component: AddUserComponent
+},
+{
+  path : 'add-user/:id',
+  component : AddUserComponent
+},
     {
         path: "login",
         component: LoginComponent
@@ -74,7 +84,12 @@ export const appRoutes: Routes = [
         {
           path:"events",
           component:EventsListComponent
-        }
+        },
+        {
+          path:"user-list",
+          component:UsersListComponent
+        },
+
       ]
 
   },
