@@ -6,6 +6,7 @@ import { AdminPageComponent } from "../pages/admin-page/admin-page/admin-page.co
 import { DashboardComponent } from "../pages/admin-page/admin-page/dashboard/dashboard.component";
 import { AddUserComponent } from "../pages/admin-page/admin-page/users/add-user/add-user.component";
 import { UsersListComponent } from "../pages/admin-page/admin-page/users/users-list/users-list.component";
+import { ContactUsComponent } from "../pages/contact-us/contact-us.component";
 import { LoginComponent } from "../pages/login/login.component";
 import { MaintenanceErrorComponent } from "../pages/maintenance-error/maintenance-error.component";
 import { NotFoundComponent } from "../pages/not-found/not-found.component";
@@ -32,6 +33,11 @@ export const appRoutes: Routes = [
                 //component: EventsListComponent
                 loadChildren: () => import('../modules/attendees/attendees.module').then((m)=>m.AttendeesModule)
             },
+            {
+              path: "contact",
+              component: ContactUsComponent
+              // loadChildren: () => import('../pages/contact-us/contact-us.component').then((m)=>m.ContactUsComponent)
+          },
             {
                 path: "event-user",
                 //component: AttendeesListComponent
