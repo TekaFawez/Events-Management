@@ -11,6 +11,7 @@ import { AdminHeaderComponent } from './admin-page/admin-page/admin-header/admin
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddUserComponent } from './admin-page/admin-page/users/add-user/add-user.component';
 import { UsersListComponent } from './admin-page/admin-page/users/users-list/users-list.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 
 
@@ -26,6 +27,7 @@ import { UsersListComponent } from './admin-page/admin-page/users/users-list/use
     AdminPageComponent,
     SidemenueComponent,
     AdminHeaderComponent,
+    ContactUsComponent,
 
 
 
