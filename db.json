@@ -1,14 +1,9 @@
 {
   "eventlist": [
     {
-      "id": 5555557,
-      "name": "match football",
-      "place": 15
-    },
-    {
       "id": 5555558,
       "name": "music band",
-      "place": 797
+      "place": 79788
     },
     {
       "id": 789,
@@ -17,12 +12,6 @@
     }
   ],
   "Userlist": [
-    {
-      "id": 985,
-      "name": "hediil",
-      "email": "hadil@gmail.com",
-      "password": ""
-    },
     {
       "id": 9798,
       "name": "Kamel TEKA",

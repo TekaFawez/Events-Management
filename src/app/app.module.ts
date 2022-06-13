@@ -13,6 +13,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { PagesModule } from './pages/pages.module';
 import { RoutesModule } from './routes/routes.module';
 import { SharedModule } from './shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //import { AdminPageComponent } from './admin-page/admin-page/admin-page.component';
 
@@ -38,6 +39,7 @@ import { SharedModule } from './shared/shared.module';
 FormsModule,
 ReactiveFormsModule,
 HttpClientModule,
+BrowserAnimationsModule,
 
 
   ],
