@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-primary my-3" [routerLink]="['/admin/users']">Retour</button>
+            <hr>
+            <h1> <input type="text" [value]="editmode ? 'Edit user' : 'Add user' "> </h1>
+        </div>
+    </div>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="form-group col-6">
+                <label for="text">ID</label>
+                <input type="number" name="id" id="id" formControlName="id" class="form-control">
+                <small *ngIf="usersForm['id'].invalid && isSubmitted" class="p-error">id is required</small
+                >
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="text">name</label>
+          <input type="text" name="name" id="name" class="form-control" formControlName="name">
+          <small *ngIf="usersForm['name'].invalid && isSubmitted" class="p-error">Name is required</small
+        >
+
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input formControlName="email" id="email" type="text" pInputText class="form-control" />
+        <div>
+        <small *ngIf="usersForm['email'].invalid && isSubmitted" class="p-error"
+
+          ><span *ngIf="usersForm['email'].errors?.['required']">email is required</span>
+          <span *ngIf="usersForm['email'].errors?.['email']">email is invalid</span></small
+        >
+      </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <label for="password">Password</label>
+              <input formControlName="password" id="password" type="password" pInputText  class="form-control" />
+              <small *ngIf="usersForm['password'].invalid && isSubmitted" class="p-error"
+                >Password is required</small
+              >
+      </div>
+
+
+
+      <div class="form-row">
+          <div class="form-group col">
+
+              <input type="submit" [value]="editmode ? 'Edit user' : 'Add user' " class="btn btn-info">
+          </div>
+      </div>
+
+  </form>
+</div>

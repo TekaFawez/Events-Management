@@ -11,7 +11,7 @@ import { EventModel } from 'src/app/core/models/event.model';
 export class EventsListComponent implements OnInit {
   events : EventModel[]=[];
 
-  constructor(private eventsService:EventService, private route:Router ) {
+  constructor(private eventsService:EventService, private router:Router ) {
 
   }
 
@@ -29,7 +29,7 @@ export class EventsListComponent implements OnInit {
 
   }
   updateEvent(eventid?: string) {
-    this.route.navigateByUrl(`add-event/${eventid}`)
+    this.router.navigateByUrl(`add-event/${eventid}`)
 
   }
   deletEvent(eventid: any) {

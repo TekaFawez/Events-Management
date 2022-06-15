@@ -1,0 +1,30 @@
+<h1 mat-dialog-title>take a place </h1>
+<div mat-dialog-content>
+    <form [formGroup]="eventForm">
+
+        <mat-form-field appearance="outline">
+            <mat-label>event name</mat-label>
+            <input matInput placeholder="event name" formControlName="name">
+
+
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>place number</mat-label>
+            <input matInput type="number" placeholder="place number" formControlName="place">
+
+
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>how many place you want?</mat-label>
+            <input matInput type="number" placeholder="how many place you want?" formControlName="nbPlace">
+
+
+        </mat-form-field>
+    </form>
+
+</div>
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button mat-raised-button color="primary" (click)="takePlace()">Save</button>
+
+</div>
