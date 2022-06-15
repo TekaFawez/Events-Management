@@ -5,6 +5,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddListComponent } from './components/add-list/add-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EventsComponent } from './components/events/events.component';
+;import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
+
+import {MatSortModule} from '@angular/material/sort';
+
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 export const routes: Routes = [
   {
@@ -21,13 +28,24 @@ export const routes: Routes = [
   declarations: [
     EventsListComponent,
     AddListComponent,
-    EventsComponent
+    EventsComponent,
+
+
   ],
   imports: [
     RouterModule.forChild(routes),
     CommonModule,
     FormsModule,
 ReactiveFormsModule,
+MatTableModule,
+MatPaginatorModule,
+MatFormFieldModule,
+MatInputModule,
+
+MatSortModule
+
+
+
   ]
 })
 export class EventsModule { }

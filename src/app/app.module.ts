@@ -14,18 +14,34 @@ import { PagesModule } from './pages/pages.module';
 import { RoutesModule } from './routes/routes.module';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { PlaceFormComponent } from './pages/place-form/place-form.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
+
+
+
+
 
 //import { AdminPageComponent } from './admin-page/admin-page/admin-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    PlaceFormComponent,
+
+
+
 
   ],
   imports: [
     RoutesModule,
     CoreModule,
-
+    MatPaginatorModule,
     LayoutsModule,
     ModulesModule,
     PagesModule,
@@ -33,6 +49,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
 
     AppRoutingModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatTableModule,
+
+
 
 //     FormsModule,
 // ReactiveFormsModule,
@@ -42,9 +65,12 @@ HttpClientModule,
 BrowserAnimationsModule,
 
 
+
   ],
   exports:[LayoutsModule],
   providers: [EventService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
+
 })
 export class AppModule { }
