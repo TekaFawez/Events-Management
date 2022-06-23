@@ -1,4 +1,4 @@
-// import { RoleModel } from "./role.model";
+
 
 export class UserModel {
    id: number | undefined;
@@ -6,5 +6,5 @@ export class UserModel {
    email?: string;
    password?:string;
    isAdmin?: true;
-  //  role: RoleModel | undefined;
+
 }

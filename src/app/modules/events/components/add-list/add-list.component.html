@@ -28,6 +28,18 @@
             <small *ngIf="eventsForm['place'].invalid && isSubmitted" class="p-error">place is required</small
               >
         </div>
+        <div class="form-group">
+          <label for="number">Price</label>
+          <input type="number" name="place" id="place" class="form-control" formControlName="price">
+          <small *ngIf="eventsForm['place'].invalid && isSubmitted" class="p-error">price is required</small
+            >
+      </div>
+      <div class="form-group">
+        <label for="number">choose a date</label>
+        <input type="date" name="date" id="date" class="form-control" formControlName="date">
+        <small *ngIf="eventsForm['date'] isSubmitted" class="p-error">date is required</small
+          >
+    </div>
 
 
 
