@@ -6,6 +6,7 @@ import { AdminPageComponent } from "../pages/admin-page/admin-page/admin-page.co
 import { DashboardComponent } from "../pages/admin-page/admin-page/dashboard/dashboard.component";
 import { AddUserComponent } from "../pages/admin-page/admin-page/users/add-user/add-user.component";
 import { UsersListComponent } from "../pages/admin-page/admin-page/users/users-list/users-list.component";
+
 import { ContactUsComponent } from "../pages/contact-us/contact-us.component";
 import { LoginComponent } from "../pages/login/login.component";
 import { MaintenanceErrorComponent } from "../pages/maintenance-error/maintenance-error.component";
@@ -62,6 +63,7 @@ export const appRoutes: Routes = [
     path: "add-user",
     component: AddUserComponent
 },
+
 {
   path : 'add-user/:id',
   component : AddUserComponent

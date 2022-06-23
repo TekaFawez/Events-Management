@@ -28,7 +28,9 @@ export class AddListComponent implements OnInit {
     this.eventForm = this.formBuilder.group({//formbuilder service use and send to formControlName
       id: ['', Validators.required],
       name: ['', Validators.required],
-      place: ['', Validators.required]
+      place: ['', Validators.required],
+      price: ['', Validators.required],
+      date: ['', Validators.required]
     });
   }
 
@@ -42,7 +44,9 @@ export class AddListComponent implements OnInit {
 
       id: this.eventsForm['id'].value,
       name : this.eventsForm['name'].value,
-      place: this.eventsForm['place'].value
+      place: this.eventsForm['place'].value,
+      price: this.eventsForm['price'].value,
+      date: this.eventsForm['date'].value
 
     }
     if(this.editmode){
@@ -54,6 +58,7 @@ export class AddListComponent implements OnInit {
   }
     creatEvent(evnt:EventModel){
     this.eventsService.postEvent(evnt).subscribe(()=>{
+      console.log(evnt)
 
       this.router.navigate(['admin/events']);
 
@@ -93,6 +98,8 @@ export class AddListComponent implements OnInit {
           // this.eventsForm['id'].setValue(event.id);
           this.eventsForm['name'].setValue(event.name);
           this.eventsForm['place'].setValue(event.place);
+          this.eventsForm['price'].setValue(event.price);
+          this.eventsForm['date'].setValue(event.date);
 
         });
       }
