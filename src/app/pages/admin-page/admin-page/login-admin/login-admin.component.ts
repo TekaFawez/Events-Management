@@ -1,16 +1,15 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/https/auth.service';
-import { UserModel } from 'src/app/core/models/user.model';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-login-admin',
+  templateUrl: './login-admin.component.html',
+  styleUrls: ['./login-admin.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginAdminComponent implements OnInit {
+
   loginFormGroup!: FormGroup;
   isSubmitted = false;
   authError = false;
@@ -38,19 +37,12 @@ export class LoginComponent implements OnInit {
     this.auth.login( this.loginForm['email'].value,this.loginForm['password'].value).subscribe(
       (user)=>{
         console.log(user)
-        this.authError = false;
-
 
 
       },
-      (error: HttpErrorResponse) => {
-        this.authError = true;
-        if (error.status !== 400) {
-          this.authMessage = 'Error in the Server, please try again later!';
-        }
-      }
 
     );
+    this.router.navigate(['admin']);
 
   }
   get loginForm() {
