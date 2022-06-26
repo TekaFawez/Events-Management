@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddUserComponent } from './admin-page/admin-page/users/add-user/add-user.component';
 import { UsersListComponent } from './admin-page/admin-page/users/users-list/users-list.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { LoginAdminComponent } from './admin-page/admin-page/login-admin/login-admin.component';
 
 
 
@@ -30,6 +31,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     SidemenueComponent,
     AdminHeaderComponent,
     ContactUsComponent,
+    LoginAdminComponent,
 
 
 

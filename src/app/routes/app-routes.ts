@@ -4,6 +4,7 @@ import { AddListComponent } from "../modules/events/components/add-list/add-list
 import { EventsListComponent } from "../modules/events/components/events-list/events-list.component";
 import { AdminPageComponent } from "../pages/admin-page/admin-page/admin-page.component";
 import { DashboardComponent } from "../pages/admin-page/admin-page/dashboard/dashboard.component";
+import { LoginAdminComponent } from "../pages/admin-page/admin-page/login-admin/login-admin.component";
 import { AddUserComponent } from "../pages/admin-page/admin-page/users/add-user/add-user.component";
 import { UsersListComponent } from "../pages/admin-page/admin-page/users/users-list/users-list.component";
 
@@ -29,6 +30,7 @@ export const appRoutes: Routes = [
             //component: EventsListComponent
             loadChildren: () => import('../modules/home/home.module').then((m)=>m.HomeModule)
         },
+
             {
                 path: "attendees",
                 //component: EventsListComponent
@@ -88,7 +90,8 @@ export const appRoutes: Routes = [
       path: "admin",
       component: AdminPageComponent,
       children : [
-        {path: '', component : DashboardComponent},
+        {path: '',
+         component : DashboardComponent},
         {
           path:"events",
           component:EventsListComponent
@@ -96,6 +99,10 @@ export const appRoutes: Routes = [
         {
           path:"user-list",
           component:UsersListComponent
+        },
+        {
+          path:"login",
+          component:LoginAdminComponent
         },
 
       ]
