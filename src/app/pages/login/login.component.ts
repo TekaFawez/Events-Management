@@ -39,6 +39,8 @@ export class LoginComponent implements OnInit {
       (user)=>{
         console.log(user)
         this.authError = false;
+        localStorage.setItem("role","user")
+        this.router.navigate(['/event-user']);
 
 
 
@@ -50,7 +52,8 @@ export class LoginComponent implements OnInit {
         }
       }
 
-    );
+      );
+
 
   }
   get loginForm() {

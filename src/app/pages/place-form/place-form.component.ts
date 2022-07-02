@@ -20,8 +20,8 @@ import { TakePlaceModels } from 'src/app/core/models/take-place.model';
 })
 export class PlaceFormComponent implements OnInit , OnChanges {
   endSubs$: Subject<any> = new Subject();
-event: EventModel;
-place:TakePlaceModels;
+event!: EventModel;
+place!:TakePlaceModels;
   // event!:EventModel
   eventForm!: FormGroup;
   currentUserId?: string;
@@ -86,7 +86,7 @@ save(){
     nbPlace: this.eventsForm['nbPlace'].value
 
   }
-  if(place.nbPlace>event.place ){
+  if(place.nbPlace!>event.place! ){
     alert("nombres des places insuffisantes ")
 
     this.dialogRef.close()
@@ -100,7 +100,7 @@ save(){
   this.creatPlace(place,event)
   console.log(event.place)
 
-  event.place=event.place-place.nbPlace;
+  event.place=event.place!-place.nbPlace!;
 event.id=event.id
 event.name=event.name
 event.price=event.price
