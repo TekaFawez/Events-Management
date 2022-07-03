@@ -1,11 +1,11 @@
 {
   "eventlist": [
     {
+      "place": 6,
       "id": 789,
       "name": "match",
-      "place": 7,
-      "price": 15,
-      "date": "2022-06-24"
+      "date": "2022-06-24",
+      "price": 15
     },
     {
       "id": 17,
@@ -445,6 +445,10 @@
     {
       "nbPlace": 2,
       "id": 68
+    },
+    {
+      "nbPlace": 1,
+      "id": 69
     }
   ]
 }

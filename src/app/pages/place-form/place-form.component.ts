@@ -99,8 +99,12 @@ save(){
   }
   this.creatPlace(place,event)
   console.log(event.place)
+  if(event.place&&place.nbPlace){
+    event.place=event.place-place.nbPlace;
 
-  event.place=event.place!-place.nbPlace!;
+  }
+
+
 event.id=event.id
 event.name=event.name
 event.price=event.price
