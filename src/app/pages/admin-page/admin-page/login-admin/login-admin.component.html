@@ -18,14 +18,14 @@
                         <div class="card-body">
 
                             <div class="pt-4 pb-2">
-                                <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
+                                <h5 class="card-title text-center pb-0 fs-4">Admin Login</h5>
                                 <p class="text-center small">Enter your username & password to login</p>
                             </div>
 
                             <form [formGroup]="loginFormGroup">
 
                                 <div class="col-12">
-                                    <label for="yourUsername" class="form-label">Username</label>
+                                    <label for="yourUsername" class="form-label">email</label>
                                     <div class="input-group has-validation">
                                         <span class="input-group-text" id="inputGroupPrepend">@</span>
                                         <div class="p-inputgroup">
@@ -34,7 +34,7 @@
                                         <small *ngIf="loginForm['email'].invalid && isSubmitted" class="p-error"><span *ngIf="loginForm['email'].errors?.['required']">email is required</span>
                                       <span *ngIf="loginForm['email'].errors?.['email']">email is invalid</span></small
                                     >
-                                      <div class="invalid-feedback">Please enter your username.</div>
+                                      <div class="invalid-feedback">Please enter your email.</div>
                                   </div>
                               </div>
 

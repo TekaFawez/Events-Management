@@ -69,17 +69,15 @@ place!:TakePlaceModels;
 
 
 save(){
-  const event : EventModel= {
-
-
+  if(this.eventForm.invalid){
+    return
+  }
+  const event : EventModel= {//send this object to the service 
     place: this.eventsForm['place'].value,
     id: this.eventsForm['id'].value,
     name: this.eventsForm['name'].value,
     date: this.eventsForm['date'].value,
     price: this.eventsForm['price'].value,
-
-
-
   }
 
   const place :TakePlaceModels={
@@ -88,14 +86,8 @@ save(){
   }
   if(place.nbPlace!>event.place! ){
     alert("nombres des places insuffisantes ")
-
     this.dialogRef.close()
-
-
-    return;
-
-
-
+  return;
   }
   this.creatPlace(place,event)
   console.log(event.place)
@@ -115,8 +107,9 @@ console.log(event.place)
   this.updateEvent(event)
   this.dialogRef.close()
 
-  this.router.navigate(['event-user']);
 
+  this.router.navigate(['event-user']);
+  this.eventsService.getAllEvents().subscribe();
 }
 creatPlace(place:TakePlaceModels,event:EventModel){
 
@@ -149,6 +142,7 @@ updateEvent(evnt:any){
 
 
 }
+
 
   get eventsForm() {
     return this.eventForm.controls;

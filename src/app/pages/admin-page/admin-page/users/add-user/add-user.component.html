@@ -7,18 +7,18 @@
         </div>
     </div>
     <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-        <div class="form-row">
+        <!-- <div class="form-row">
             <div class="form-group col-6">
                 <label for="text">ID</label>
                 <input type="number" name="id" id="id" formControlName="id" class="form-control">
                 <small *ngIf="usersForm['id'].invalid && isSubmitted" class="p-error">id is required</small
                 >
           </div>
-      </div>
-      <div class="form-group">
-          <label for="text">name</label>
-          <input type="text" name="name" id="name" class="form-control" formControlName="name">
-          <small *ngIf="usersForm['name'].invalid && isSubmitted" class="p-error">Name is required</small
+      </div> -->
+        <div class="form-group">
+            <label for="text">name</label>
+            <input type="text" name="name" id="name" class="form-control" formControlName="name">
+            <small *ngIf="usersForm['name'].invalid && isSubmitted" class="p-error">Name is required</small
         >
 
       </div>

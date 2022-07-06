@@ -1,7 +1,7 @@
 
 
 export class UserModel {
-   id: number | undefined;
+   id?: string;
    name?:string;
    email?: string;
    password?:string;

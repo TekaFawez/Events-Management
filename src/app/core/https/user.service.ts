@@ -12,20 +12,20 @@ import { UserModel } from "../models/user.model";
 export class UserService {
   constructor(private http: HttpClient){ }
   public getAllUsers(): Observable<UserModel[]>{
-    return this.http.get<any>("http://localhost:3000/Userlist")
+    return this.http.get<any>("http://localhost:2000/api/v1/users")
    }
    public getUser(UserId: string): Observable<UserModel> {
-     return this.http.get<UserModel>(`http://localhost:3000/Userlist/${UserId}`);
+     return this.http.get<UserModel>(`http://localhost:2000/api/v1/users/${UserId}`);
    }
    public postUser( User:UserModel): Observable<UserModel>{
-     return this.http.post<UserModel>("http://localhost:3000/Userlist",User)
+     return this.http.post<UserModel>("http://localhost:2000/api/v1/users",User)
 
    }
    public deleteUser(UserId:String):Observable<any>{
-     return this.http.delete<any>(`http://localhost:3000/Userlist/${UserId}`)
+     return this.http.delete<any>(`http://localhost:2000/api/v1/users/${UserId}`)
 
    }
    public updateUser( User:UserModel): Observable<UserModel>{
-     return this.http.put<UserModel>(`http://localhost:3000/Userlist/${User.id}`,User)
+     return this.http.put<UserModel>(`http://localhost:2000/api/v1/users/${User.id}`,User)
    }
 }

@@ -85,8 +85,14 @@ export const appRoutes: Routes = [
         component: MaintenanceErrorComponent
     },
     {
+      path:"admin-login",
+      component:LoginAdminComponent
+    },
+    {
       path: "admin",
       component: AdminPageComponent,
+      canActivate: [AuthGuard],
+
       children : [
         {path: '',
          component : DashboardComponent},
@@ -98,10 +104,7 @@ export const appRoutes: Routes = [
           path:"user-list",
           component:UsersListComponent
         },
-        {
-          path:"login",
-          component:LoginAdminComponent
-        },
+
 
       ]
 
