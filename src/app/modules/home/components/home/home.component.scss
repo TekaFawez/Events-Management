@@ -138,3 +138,34 @@ body {
         margin-top: 7rem;
     }
 }
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.clients {
+    padding: 0 0 60px 0;
+    align-items: center;
+}
+
+.clients .swiper-slide img {
+    opacity: 0.5;
+    transition: 0.3s;
+    filter: grayscale(100);
+    align-items: center;
+}
+
+.clients .swiper-slide img:hover {
+    filter: none;
+    opacity: 1;
+    align-items: center;
+}
+
+.align-items-center {
+    align-items: center !important;
+}
+
+.aligne {
+    text-align: center;
+}
