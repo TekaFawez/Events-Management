@@ -15,7 +15,7 @@
       "date": "2022-05-31"
     },
     {
-      "place": 75,
+      "place": 52,
       "id": 785,
       "name": "beach",
       "date": "2022-06-16",
@@ -304,6 +304,42 @@
     {
       "nbPlace": 5,
       "id": 59
+    },
+    {
+      "nbPlace": 4,
+      "id": 60
+    },
+    {
+      "nbPlace": 2,
+      "id": 61
+    },
+    {
+      "nbPlace": 1,
+      "id": 62
+    },
+    {
+      "nbPlace": 10,
+      "id": 63
+    },
+    {
+      "nbPlace": 2,
+      "id": 64
+    },
+    {
+      "nbPlace": 1,
+      "id": 65
+    },
+    {
+      "nbPlace": 1,
+      "id": 66
+    },
+    {
+      "nbPlace": 1,
+      "id": 67
+    },
+    {
+      "nbPlace": 1,
+      "id": 68
     }
   ]
 }

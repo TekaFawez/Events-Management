@@ -21,8 +21,12 @@ import { PlaceFormComponent } from './pages/place-form/place-form.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
 
 
+import { MessageService } from 'primeng/api';
+
+import { ToastModule } from 'primeng/toast';
 
 
 
@@ -48,6 +52,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     PagesModule,
     SharedModule,
     BrowserModule,
+    AccordionModule,
+    ToastModule,
 
     AppRoutingModule,
     MatDialogModule,
@@ -55,6 +61,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatInputModule,
     MatButtonModule,
     MatTableModule,
+
 
 
 
@@ -69,7 +76,7 @@ BrowserAnimationsModule,
 
   ],
   exports:[LayoutsModule],
-  providers: [EventService],
+  providers: [EventService,MessageService],
   bootstrap: [AppComponent],
 
 

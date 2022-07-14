@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
  import { MatDialogRef} from '@angular/material/dialog';
 import { MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {  Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 import { Subject } from 'rxjs';
 
 import { EventService } from 'src/app/core/https/events.service';
@@ -26,6 +27,7 @@ place:TakePlaceModels;
   eventForm!: FormGroup;
   currentUserId?: string;
   editmode=true;
+  location: any;
 
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,
@@ -33,7 +35,8 @@ place:TakePlaceModels;
    private takePlaceService:TakedPlaceService,
    private dialogRef:MatDialogRef<PlaceFormComponent>,
    private router: Router,
-    private eventsService:EventService
+    private eventsService:EventService,
+    private messageService: MessageService
    ) { }
   ngOnChanges(changes: SimpleChanges): void {
     console.log(changes)
@@ -111,13 +114,20 @@ console.log(event.place)
   this.updateEvent(event)
   this.dialogRef.close()
 
+
   this.router.navigate(['event-user']);
 
 }
 creatPlace(place:TakePlaceModels,event:EventModel){
 
 
-  this.takePlaceService.postPlace(place).subscribe(()=>{
+  this.takePlaceService.postPlace(place).subscribe (response=>{
+    this.messageService.add({
+      severity:'success',
+       summary:'success ',
+       detail:'Category is created '
+      });
+
     this.router.navigate(['event-user']);
 
 
@@ -135,7 +145,18 @@ updateEvent(evnt:any){
 
   this.eventsService.updatePlaceEvent(evnt,this.data.id).subscribe(()=>{
 
-    this.router.navigate(['event-user']);
+
+    // this.messageService.add({
+    //   severity:'success',
+    //    summary:'success ',
+    //    detail:'Place is aded '
+    //   });
+    //   timer(2000).toPromise().then(done=>{
+    //     this.location.back()
+    //   })
+
+
+    // this.router.navigate(['event-user']);
 
   },
   (error)=>{
