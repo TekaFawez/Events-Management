@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {  Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 import { EventService } from 'src/app/core/https/events.service';
 import { EventModel } from 'src/app/core/models/event.model';
 
@@ -11,7 +12,8 @@ import { EventModel } from 'src/app/core/models/event.model';
 export class EventsListComponent implements OnInit {
   events : EventModel[]=[];
 
-  constructor(private eventsService:EventService, private router:Router ) {
+  constructor(private eventsService:EventService, private router:Router,    private messageService:MessageService,
+    ) {
 
   }
 
@@ -36,6 +38,11 @@ export class EventsListComponent implements OnInit {
 
     this.eventsService.deleteEvent(eventid).subscribe(()=>{
      this.getEvents()
+     this.messageService.add({
+      severity: 'success',
+      summary: 'Success',
+      detail: 'product is deleted!'
+    });
      })
 
 

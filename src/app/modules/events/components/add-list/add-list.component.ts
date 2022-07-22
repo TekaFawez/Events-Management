@@ -26,7 +26,6 @@ export class AddListComponent implements OnInit {
 
 
     this.eventForm = this.formBuilder.group({//formbuilder service use and send to formControlName
-      id: ['', Validators.required],
       name: ['', Validators.required],
       place: ['', Validators.required],
       price: ['', Validators.required],
@@ -41,8 +40,8 @@ export class AddListComponent implements OnInit {
       return;
     }
     const evnt : EventModel= {
+      id:this.currentUserId,
 
-      id: this.eventsForm['id'].value,
       name : this.eventsForm['name'].value,
       place: this.eventsForm['place'].value,
       price: this.eventsForm['price'].value,

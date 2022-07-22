@@ -12,6 +12,10 @@ import {MatSortModule} from '@angular/material/sort';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
+
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
 
 export const routes: Routes = [
   {
@@ -26,7 +30,7 @@ export const routes: Routes = [
 
 @NgModule({
   declarations: [
-    EventsListComponent,
+     EventsListComponent,
     AddListComponent,
     EventsComponent,
 
@@ -42,10 +46,16 @@ MatPaginatorModule,
 MatFormFieldModule,
 MatInputModule,
 
-MatSortModule
+MatSortModule,
+AccordionModule,
+ToastModule
 
 
 
-  ]
+
+
+  ],
+  providers: [MessageService]
+
 })
 export class EventsModule { }
