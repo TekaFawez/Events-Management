@@ -27,6 +27,7 @@ place!:TakePlaceModels;
   eventForm!: FormGroup;
   currentUserId?: string;
   editmode=true;
+  events : EventModel[]=[];
 
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,
@@ -37,10 +38,11 @@ place!:TakePlaceModels;
     private eventsService:EventService,
     private messageService: MessageService
    ) { }
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes)
-
-    throw new Error('Method not implemented.');
+   ngOnChanges() {
+    this.eventsService.getAllEvents().subscribe((res)=>{
+      console.log(res)
+      this.events=res;
+     })
 
   }
 
@@ -130,7 +132,6 @@ private creatPlace(place:TakePlaceModels,event:EventModel){
        summary:'success ',
        detail:'place  is added '
       });
-console.log(this.messageService)
 
 
   },

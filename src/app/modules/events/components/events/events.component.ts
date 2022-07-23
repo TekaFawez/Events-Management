@@ -1,4 +1,4 @@
-import { Component, OnInit,ViewChild } from '@angular/core';
+import { Component, OnChanges, OnInit,SimpleChanges,ViewChild } from '@angular/core';
 import { EventService } from 'src/app/core/https/events.service';
 import { EventModel } from 'src/app/core/models/event.model';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
@@ -13,7 +13,7 @@ import {MatTableDataSource} from '@angular/material/table';
   templateUrl: './events.component.html',
   styleUrls: ['./events.component.scss']
 })
-export class EventsComponent implements OnInit {
+export class EventsComponent implements OnInit  , OnChanges{
   events : EventModel[]=[];
   displayedColumns: string[] = [ 'name', 'place','price','date','action'];
   dataSource!: MatTableDataSource<any>;
@@ -22,6 +22,11 @@ export class EventsComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(private eventsService:EventService,public dialog: MatDialog) { }
+  ngOnChanges() {
+    this.getEvents()
+
+
+  }
 
   ngOnInit(): void {
     this.getEvents()
