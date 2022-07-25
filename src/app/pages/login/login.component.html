@@ -18,32 +18,32 @@
                         <div class="card-body">
 
                             <div class="pt-4 pb-2">
-                                <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
+                                <h5 class="card-title text-center pb-0 fs-4">User Login</h5>
                                 <p class="text-center small">Enter your username & password to login</p>
                             </div>
 
                             <form [formGroup]="loginFormGroup">
 
                                 <div class="col-12">
-                                    <label for="yourUsername" class="form-label">Email</label>
+                                    <label for="yourUsername" class="form-label">email</label>
                                     <div class="input-group has-validation">
                                         <span class="input-group-text" id="inputGroupPrepend">@</span>
                                         <div class="p-inputgroup">
                                             <input type="text" formControlName="email" name="username" class="form-control" id="yourUsername" required>
                                         </div>
                                         <small *ngIf="loginForm['email'].invalid && isSubmitted" class="p-error"><span *ngIf="loginForm['email'].errors?.['required']">email is required</span>
-                                        <span *ngIf="loginForm['email'].errors?.['email']">email is invalid</span></small
-                                      >
-                                        <div class="invalid-feedback">Please enter your username.</div>
-                                    </div>
+                                    <span *ngIf="loginForm['email'].errors?.['email']">email is invalid</span></small
+                                  >
+                                    <div class="invalid-feedback">Please enter your email.</div>
                                 </div>
+                            </div>
 
-                                <div class="col-12">
-                                    <label for="yourPassword" class="form-label">Password</label>
-                                    <input type="password" formControlName="password" name="password" class="form-control" id="yourPassword" required>
-                                    <small *ngIf="loginForm['password'].invalid && isSubmitted" class="p-error"
-                                    >Password is required
-                                  </small>
+                            <div class="col-12">
+                                <label for="yourPassword" class="form-label">Password</label>
+                                <input type="password" formControlName="password" name="password" class="form-control" id="yourPassword" required>
+                                <small *ngIf="loginForm['password'].invalid && isSubmitted" class="p-error"
+                                >Password is required
+                              </small>
                                         <div class="invalid-feedback">Please enter your password!</div>
                                     </div>
 
@@ -54,9 +54,7 @@
                                             <small class="p-error">{{ authMessage }}</small>
                                         </div>
                                     </div>
-                                    <div class="col-12">
-                                        <p class="small mb-0">Don't have account?</p> <a class="nav-link" [routerLink]="['/register']">register</a>
-                                    </div>
+
                             </form>
 
                             </div>
@@ -71,62 +69,62 @@
 
     </div>
     <!-- <section id="aa-catg-head-banner">
-    <img src="../../../assets/images/login-inner-bnr.jpg" alt="fashion img">
-    <div class="aa-catg-head-banner-area">
-        <div class="container">
-            <div class="aa-catg-head-banner-content">
+<img src="../../../assets/images/login-inner-bnr.jpg" alt="fashion img">
+<div class="aa-catg-head-banner-area">
+    <div class="container">
+        <div class="aa-catg-head-banner-content">
 
 
-            </div>
         </div>
     </div>
+</div>
 </section>
 
 
 
 <section id="aa-myaccount">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="aa-myaccount-area">
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="aa-myaccount-area">
 
-                    <div class="aa-myaccount-login">
-                        <h4>Login</h4>
-                        <form [formGroup]="loginFormGroup">
-                            <div class="p-grid p-mt-6">
-                                <div class="p-col-12">
-                                    <div class="p-inputgroup">
-                                        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-                                        <input type="text" formControlName="email" pInputText placeholder="Email" />
-                                    </div>
-                                    <small *ngIf="loginForm['email'].invalid && isSubmitted" class="p-error"><span *ngIf="loginForm['email'].errors?.['required']">email is required</span>
-          <span *ngIf="loginForm['email'].errors?.['email']">email is invalid</span></small
-        >
-      </div>
-      <div class="p-col-12">
-        <div class="p-inputgroup">
-          <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
-          <input
-            type="password"
-            formControlName="password"
-            pInputText
-            placeholder="Password"
-          />
-        </div>
-        <small *ngIf="loginForm['password'].invalid && isSubmitted" class="p-error"
-          >Password is required
-        </small>
+                <div class="aa-myaccount-login">
+                    <h4>Login</h4>
+                    <form [formGroup]="loginFormGroup">
+                        <div class="p-grid p-mt-6">
+                            <div class="p-col-12">
+                                <div class="p-inputgroup">
+                                    <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                                    <input type="text" formControlName="email" pInputText placeholder="Email" />
                                 </div>
-                                <div class="p-col-12">
-                                    <p-button label="Submit" styleClass="full-btn" (onClick)="onSubmit()"></p-button>
-                                </div>
-
+                                <small *ngIf="loginForm['email'].invalid && isSubmitted" class="p-error"><span *ngIf="loginForm['email'].errors?.['required']">email is required</span>
+      <span *ngIf="loginForm['email'].errors?.['email']">email is invalid</span></small
+    >
+  </div>
+  <div class="p-col-12">
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+      <input
+        type="password"
+        formControlName="password"
+        pInputText
+        placeholder="Password"
+      />
+    </div>
+    <small *ngIf="loginForm['password'].invalid && isSubmitted" class="p-error"
+      >Password is required
+    </small>
                             </div>
-                        </form>
-                    </div>
-                </div>
+                            <div class="p-col-12">
+                                <p-button label="Submit" styleClass="full-btn" (onClick)="onSubmit()"></p-button>
+                            </div>
 
+                        </div>
+                    </form>
+                </div>
             </div>
 
         </div>
-    </div> -->
+
+    </div>
+</div> -->
