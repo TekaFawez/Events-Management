@@ -1,7 +1,5 @@
-import { EventModel } from './event.model';
-
 export class TakePlaceModels{
-  event_ID?:String
+  eventId?:String
   UserId?:String
   nbPlace?:number
 }

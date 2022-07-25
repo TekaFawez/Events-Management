@@ -14,10 +14,6 @@ import { UsersListComponent } from './admin-page/admin-page/users/users-list/use
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { LoginAdminComponent } from './admin-page/admin-page/login-admin/login-admin.component';
 
-import { MessageService } from 'primeng/api';
-
-import {ToastModule} from 'primeng/toast';
-import { DashboardComponent } from './admin-page/admin-page/dashboard/dashboard.component';
 
 
 
@@ -32,12 +28,10 @@ import { DashboardComponent } from './admin-page/admin-page/dashboard/dashboard.
     RegisterComponent,
     MaintenanceErrorComponent,
     AdminPageComponent,
-     SidemenueComponent,
+    SidemenueComponent,
     AdminHeaderComponent,
     ContactUsComponent,
     LoginAdminComponent,
-    DashboardComponent
-
 
 
 
@@ -48,10 +42,8 @@ import { DashboardComponent } from './admin-page/admin-page/dashboard/dashboard.
     RouterModule,
     FormsModule,
 ReactiveFormsModule,
-ToastModule
 
 
-  ],
-  providers: [MessageService]
+  ]
 })
 export class PagesModule { }

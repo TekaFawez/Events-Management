@@ -51,17 +51,17 @@
                         </div>
 
                         <div class="col-md-12">
-                            <input type="text" class="form-control" name="subject" placeholder="Subject" required formControlName="object">
+                            <input type="text" class="form-control" name="subject" placeholder="Subject" required formControlName="sujet">
                         </div>
 
                         <div class="col-md-12">
-                            <textarea class="form-control" name="message" rows="6" placeholder="Message" required formControlName="msg"></textarea>
+                            <textarea class="form-control" name="message" rows="6" placeholder="Message" required formControlName="message"></textarea>
                         </div>
 
                         <div class="col-md-12 text-center">
 
 
-                            <button type="submit">Send Message</button>
+                            <button type="submit" (click)="sendMail()">Send Message</button>
                         </div>
 
                     </div>

@@ -1,6 +1,5 @@
 import { Routes } from "@angular/router";
 import { AuthGuard } from "../core/auth/auth.guard";
-import { UserAuthGuard } from "../core/auth/user-auth.guard";
 import { MainLayoutComponent } from "../layouts/main-layout/main-layout.component";
 import { AddListComponent } from "../modules/events/components/add-list/add-list.component";
 import { EventsListComponent } from "../modules/events/components/events-list/events-list.component";
@@ -41,7 +40,7 @@ export const appRoutes: Routes = [
           },
             {
                 path: "event-user",
-                 canActivate:[UserAuthGuard],
+                canActivate:[AuthGuard],
                 //component: AttendeesListComponent
                 loadChildren: () => import('../modules/events/events.module').then((m)=>m.EventsModule)
             },

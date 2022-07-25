@@ -8,31 +8,24 @@ import {MatSortModule} from '@angular/material/sort';
 import { EventsComponent } from './events/components/events/events.component';
 import { MatTableModule } from '@angular/material/table';
 
-import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
 
-import { MessageService } from 'primeng/api';
-import { ToastModule } from 'primeng/toast';
 
 
 
 @NgModule({
   declarations: [],
   imports: [
-    // HomeModule,
+    HomeModule,
 
     AttendeesModule,
     EventsModule,
     CommonModule,
     MatSortModule,
-    MatTableModule,
-    AccordionModule,
-    ToastModule
+    MatTableModule
 
 
 
   ],
-  entryComponents: [EventsComponent],
-  providers: [MessageService]
-
+  entryComponents: [EventsComponent]
 })
 export class ModulesModule { }

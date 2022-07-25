@@ -27,9 +27,9 @@
                                 <div class="col-12">
                                     <label for="yourUsername" class="form-label">Email</label>
                                     <div class="input-group has-validation">
-                                        <!-- <span class="input-group-text" id="inputGroupPrepend">@</span> -->
+                                        <span class="input-group-text" id="inputGroupPrepend">@</span>
                                         <div class="p-inputgroup">
-                                            <input type="text" formControlName="email" name="email" class="form-control" id="email" required>
+                                            <input type="text" formControlName="email" name="username" class="form-control" id="yourUsername" required>
                                         </div>
                                         <small *ngIf="loginForm['email'].invalid && isSubmitted" class="p-error"><span *ngIf="loginForm['email'].errors?.['required']">email is required</span>
                                         <span *ngIf="loginForm['email'].errors?.['email']">email is invalid</span></small

@@ -23,11 +23,6 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { JwtInterceptor } from './core/https/jwt.interceptor';
 
-import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
-import { MessageService } from 'primeng/api';
-
-import { ToastModule } from 'primeng/toast';
-
 
 
 
@@ -49,17 +44,11 @@ import { ToastModule } from 'primeng/toast';
     RoutesModule,
     CoreModule,
     MatPaginatorModule,
-    BrowserAnimationsModule,
     LayoutsModule,
     ModulesModule,
     PagesModule,
     SharedModule,
     BrowserModule,
-
-    AccordionModule,
-
-
-    ToastModule,
 
     AppRoutingModule,
     MatDialogModule,
@@ -75,13 +64,13 @@ import { ToastModule } from 'primeng/toast';
 FormsModule,
 ReactiveFormsModule,
 HttpClientModule,
-
+BrowserAnimationsModule,
 
 
 
   ],
   exports:[LayoutsModule],
-  providers: [EventService,MessageService,
+  providers: [EventService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }],
   bootstrap: [AppComponent],
 
