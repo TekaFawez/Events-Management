@@ -11,7 +11,7 @@ export class AuthService {
   constructor(private http:HttpClient) { }
 
   login(email: string, password: string): Observable<UserModel>{
-    return this.http.post<UserModel>(`${'http://localhost:3000/Userlistlogin'}`, { email, password })
+    return this.http.post<UserModel>(`${'http://localhost:2000/api/v1/users'}/login`, { email, password })
 
   }
 }

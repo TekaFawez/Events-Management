@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+
 import { UserService } from 'src/app/core/https/user.service';
 import { UserModel } from 'src/app/core/models/user.model';
 
@@ -23,7 +24,7 @@ export class AddUserComponent implements OnInit {
     this._checkEditMode();
 
     this.userForm = this.formBuilder.group({//formbuilder service use and send to formControlName
-      id: ['', Validators.required],
+
       name: ['', Validators.required],
       password: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -40,7 +41,7 @@ export class AddUserComponent implements OnInit {
 
 
 
-      id: this.usersForm['id'].value,
+      id: this.currentUserId,
       name: this.usersForm['name'].value,
       email: this.usersForm['email'].value,
       password:this.usersForm['password'].value,
@@ -86,7 +87,8 @@ export class AddUserComponent implements OnInit {
 
   private _checkEditMode() { //if there /add-user:id then we are in editmod
     this.route.params.subscribe((params) => {
-      if (params['id']) {
+      if (params['id'])//this ['id'] from routes when we clic on update
+       {
         this.editmode = true;
 
         this.currentUserId = params['id'];

@@ -1,10 +1,22 @@
 <h1 mat-dialog-title>take a place </h1>
 <div mat-dialog-content>
     <form [formGroup]="eventForm">
+        <!-- <mat-form-field appearance="outline">
+            <mat-label>id</mat-label>
+            <input matInput placeholder="event name" formControlName="id">
+
+
+        </mat-form-field> -->
 
         <mat-form-field appearance="outline">
             <mat-label>event name</mat-label>
             <input matInput placeholder="event name" formControlName="name">
+
+
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>date</mat-label>
+            <input matInput placeholder="event date" formControlName="date">
 
 
         </mat-form-field>
@@ -14,17 +26,26 @@
 
 
         </mat-form-field>
+
         <mat-form-field appearance="outline">
-            <mat-label>how many place you want?</mat-label>
-            <input matInput type="number" placeholder="how many place you want?" formControlName="nbPlace">
+            <mat-label>Price</mat-label>
+            <input matInput type="number" placeholder="Price" formControlName="price">
 
 
         </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>how many place you want?</mat-label>
+            <input matInput type="number" placeholder="how many place you want?" formControlName="nbPlace">
+            <!-- <button type="button" class="btn btn-primary" (click)="addToCard(event)">Take Places</button> -->
+
+        </mat-form-field>
+        <!-- <button type="button" class="btn btn-primary" (click)="addToCard()">Take Places</button> -->
+
     </form>
 
 </div>
 <div mat-dialog-actions [align]="'end'">
     <button mat-raised-button color="warn" mat-dialog-close>Close</button>
-    <button mat-raised-button color="primary" (click)="takePlace()">Save</button>
+    <button mat-raised-button color="primary" (click)="save()">Save</button>
 
 </div>

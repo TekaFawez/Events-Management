@@ -1,6 +1,9 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/https/auth.service';
+import { LocalstorageService } from 'src/app/core/https/localstorage.service';
 import { UserModel } from 'src/app/core/models/user.model';
 
 @Component({
@@ -15,7 +18,7 @@ export class LoginComponent implements OnInit {
 
 
   authMessage = 'Email or Password are wrong';
-  constructor(private formBuilder: FormBuilder,private auth:AuthService) { }
+  constructor(private formBuilder: FormBuilder,private auth:AuthService,private router:Router, private localstorage:LocalstorageService) { }
 
   ngOnInit(): void {
     this._initForm();
@@ -36,11 +39,25 @@ export class LoginComponent implements OnInit {
     this.auth.login( this.loginForm['email'].value,this.loginForm['password'].value).subscribe(
       (user)=>{
         console.log(user)
+        this.authError = false;
+        this.localstorage.setToken(user.token)
+        this.router.navigate(['/event-user']);
+
+        console.log(user)
+
 
 
       },
+      (error: HttpErrorResponse) => {
+        this.authError = true;
+        if (error.status !== 400) {
+          this.authMessage = 'Error in the Server, please try again later!';
+        }
+      }
 
-    );
+      );
+
+
   }
   get loginForm() {
     return this.loginFormGroup.controls;

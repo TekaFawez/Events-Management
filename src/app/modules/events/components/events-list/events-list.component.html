@@ -16,19 +16,23 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th>ID</th>
+
 
                         <th>Name</th>
                         <th>places</th>
+                        <th>price</th>
 
+                        <th>date</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody *ngFor="let event of events">
                     <tr>
-                        <td> {{ event.id }} </td>
+
                         <td>{{event.name}}</td>
                         <td>{{event.place}}</td>
+                        <td>{{event.price | currency}}</td>
+                        <td>{{event.date | date}}</td>
                         <td>
 
                             <a class="edit" title="Edit" data-toggle="tooltip" (click)=" updateEvent(event.id)"><i class="material-icons">&#xE254;</i></a>

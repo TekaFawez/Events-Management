@@ -15,7 +15,7 @@ import {MatTableDataSource} from '@angular/material/table';
 })
 export class EventsComponent implements OnInit {
   events : EventModel[]=[];
-  displayedColumns: string[] = [ 'name', 'place','action'];
+  displayedColumns: string[] = [ 'name', 'place','price','date','action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;

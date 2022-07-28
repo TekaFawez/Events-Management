@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,7 +9,7 @@ import { CoreModule } from './core/core.module';
 import { EventService } from './core/https/events.service';
 import { LayoutsModule } from './layouts/layouts.module';
 import { ModulesModule } from './modules/modules.module';
-import { LoginComponent } from './pages/login/login.component';
+
 import { PagesModule } from './pages/pages.module';
 import { RoutesModule } from './routes/routes.module';
 import { SharedModule } from './shared/shared.module';
@@ -21,6 +21,8 @@ import { PlaceFormComponent } from './pages/place-form/place-form.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { JwtInterceptor } from './core/https/jwt.interceptor';
+
 
 
 
@@ -68,7 +70,8 @@ BrowserAnimationsModule,
 
   ],
   exports:[LayoutsModule],
-  providers: [EventService],
+  providers: [EventService,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }],
   bootstrap: [AppComponent],
 
 
