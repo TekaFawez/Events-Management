@@ -32,7 +32,7 @@ constructor(private http: HttpClient) {
     return this.http.put<EventModel>(`http://localhost:2000/api/v1/events/${event.id}`,event)
   }
   public updatePlaceEvent( data:any,id:String): Observable<any>{
-    return this.http.put<any>("http://localhost:2000/api/v1/events/"+id,data)
+    return this.http.put<any>("http://localhost:2000/api/v1/updatePlace/"+id,data)
   }
 
 

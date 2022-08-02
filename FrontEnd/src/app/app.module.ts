@@ -21,7 +21,12 @@ import { PlaceFormComponent } from './pages/place-form/place-form.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+
 import { JwtInterceptor } from './core/https/jwt.interceptor';
+import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
+import { MessageService } from 'primeng/api';
+
+import { ToastModule } from 'primeng/toast';
 
 
 
@@ -44,11 +49,16 @@ import { JwtInterceptor } from './core/https/jwt.interceptor';
     RoutesModule,
     CoreModule,
     MatPaginatorModule,
+    BrowserAnimationsModule,
     LayoutsModule,
     ModulesModule,
     PagesModule,
     SharedModule,
     BrowserModule,
+    AccordionModule,
+
+
+    ToastModule,
 
     AppRoutingModule,
     MatDialogModule,
@@ -64,13 +74,12 @@ import { JwtInterceptor } from './core/https/jwt.interceptor';
 FormsModule,
 ReactiveFormsModule,
 HttpClientModule,
-BrowserAnimationsModule,
 
 
 
   ],
   exports:[LayoutsModule],
-  providers: [EventService,
+  providers: [EventService, MessageService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }],
   bootstrap: [AppComponent],
 

@@ -1,5 +1,5 @@
 export class TakePlaceModels{
-  eventId?:String
+  event_ID?:String
   UserId?:String
   nbPlace?:number
 }

@@ -7,6 +7,10 @@ import {MatSortModule} from '@angular/material/sort';
 // import {MatPaginatorModule} from '@angular/material/paginator';
 import { EventsComponent } from './events/components/events/events.component';
 import { MatTableModule } from '@angular/material/table';
+import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
+
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
 
 
 
@@ -21,11 +25,15 @@ import { MatTableModule } from '@angular/material/table';
     EventsModule,
     CommonModule,
     MatSortModule,
-    MatTableModule
+    MatTableModule,
+    AccordionModule,
+    ToastModule
 
 
 
   ],
-  entryComponents: [EventsComponent]
+  entryComponents: [EventsComponent],
+  providers: [MessageService]
+
 })
 export class ModulesModule { }
