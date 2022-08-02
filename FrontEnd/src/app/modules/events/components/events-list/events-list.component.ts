@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {  Router } from '@angular/router';
 import { EventService } from 'src/app/core/https/events.service';
 import { EventModel } from 'src/app/core/models/event.model';
+import { ConfirmationService, MessageService } from 'primeng/api';
+
 
 @Component({
   selector: 'app-events-list',
@@ -11,7 +13,11 @@ import { EventModel } from 'src/app/core/models/event.model';
 export class EventsListComponent implements OnInit {
   events : EventModel[]=[];
 
-  constructor(private eventsService:EventService, private router:Router ) {
+  constructor(private eventsService:EventService,
+     private router:Router,    private messageService:MessageService,
+     private confirmationService: ConfirmationService,
+
+    ) {
 
   }
 
@@ -33,13 +39,31 @@ export class EventsListComponent implements OnInit {
 
   }
   deletEvent(eventid: any) {
+    this.confirmationService.confirm({
+      message: 'Do you want to Delete this Event?',
+      header: 'Delete User',
+      icon: 'pi pi-exclamation-triangle',
+      accept: () => {
+
 
     this.eventsService.deleteEvent(eventid).subscribe(()=>{
      this.getEvents()
-     })
-
-
+     this.messageService.add({
+      severity: 'success',
+      summary: 'Success',
+      detail: 'Event is deleted!'
+    });
+  },
+  () => {
+    this.messageService.add({
+      severity: 'error',
+      summary: 'Error',
+      detail: 'Event is not deleted!'
+    });
   }
+);
+}
+});
 
-
+}
 }

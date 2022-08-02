@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
  import { MatDialogRef} from '@angular/material/dialog';
 import { MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {  Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 import { Subject } from 'rxjs';
 
 import { EventService } from 'src/app/core/https/events.service';
@@ -33,7 +34,8 @@ place!:TakePlaceModels;
    private takePlaceService:TakedPlaceService,
    private dialogRef:MatDialogRef<PlaceFormComponent>,
    private router: Router,
-    private eventsService:EventService
+    private eventsService:EventService,
+    private messageService: MessageService
    ) { }
   ngOnChanges(changes: SimpleChanges): void {
     console.log(changes)
@@ -53,11 +55,13 @@ place!:TakePlaceModels;
       date: ['', Validators.required],
 
       nbPlace:['',Validators.required],
-      // nbplace: ['', Validators.required],
-      // nbPlace: ['', Validators.required]
+      event_ID:['',Validators.required],
+
     });
     if(this.data){
       this.eventsForm['id'].setValue(this.data.id)
+
+      this.eventsForm['event_ID'].setValue(this.data.id)
       this.eventsForm['name'].setValue(this.data.name)
       this.eventsForm['place'].setValue(this.data.place)
       this.eventsForm['price'].setValue(this.data.price),
@@ -68,11 +72,11 @@ place!:TakePlaceModels;
 
 
 
-save(){
+savee(){
   if(this.eventForm.invalid){
     return
   }
-  const event : EventModel= {//send this object to the service 
+  const event : EventModel= {//send this object to the service
     place: this.eventsForm['place'].value,
     id: this.eventsForm['id'].value,
     name: this.eventsForm['name'].value,
@@ -81,7 +85,9 @@ save(){
   }
 
   const place :TakePlaceModels={
-    nbPlace: this.eventsForm['nbPlace'].value
+    nbPlace: this.eventsForm['nbPlace'].value,
+    event_ID: this.eventsForm['event_ID'].value,
+
 
   }
   if(place.nbPlace!>event.place! ){
@@ -101,21 +107,28 @@ event.id=event.id
 event.name=event.name
 event.price=event.price
 event.date=event.date
+place.event_ID=event.id
+
 
 
 console.log(event.place)
   this.updateEvent(event)
-  this.dialogRef.close()
+  // this.dialogRef.close()
 
 
   this.router.navigate(['event-user']);
   this.eventsService.getAllEvents().subscribe();
 }
-creatPlace(place:TakePlaceModels,event:EventModel){
+private creatPlace(place:TakePlaceModels,event:EventModel){
 
 
-  this.takePlaceService.postPlace(place).subscribe(()=>{
-    this.router.navigate(['event-user']);
+  this.takePlaceService.postPlace(place).subscribe (response=>{
+    this.messageService.add({
+      severity:'success',
+       summary:'success ',
+       detail:'place  is added '
+      });
+console.log(this.messageService)
 
 
   },

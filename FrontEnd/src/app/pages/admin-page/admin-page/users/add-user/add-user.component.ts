@@ -1,6 +1,10 @@
+import { Location } from '@angular/common';
+
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
+import { timer } from 'rxjs';
 
 import { UserService } from 'src/app/core/https/user.service';
 import { UserModel } from 'src/app/core/models/user.model';
@@ -17,7 +21,9 @@ export class AddUserComponent implements OnInit {
   editmode=false;
   currentUserId?: string;
   constructor(private usersService:UserService,private router:Router , private formBuilder: FormBuilder,
-    private route: ActivatedRoute ) //activateRoute to know there are parametre in url or not
+    private route: ActivatedRoute ,    private messageService: MessageService,    private location: Location,
+
+    ) //activateRoute to know there are parametre in url or not
     { }
 
   ngOnInit(): void {
@@ -60,11 +66,23 @@ export class AddUserComponent implements OnInit {
   creatUser(user:UserModel){
     this.usersService.postUser(user).subscribe(()=>{
 
-      this.router.navigate(['admin/user-list']);
-
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Success',
+        detail: `User ${user.name} is created!`
+      });
+      timer(2000)
+        .toPromise()
+        .then(() => {
+          this.location.back();
+        });
     },
-    (error)=>{
-      console.log(error);
+    () => {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'User is not created!'
+      });
     }
     )
 
@@ -74,11 +92,23 @@ export class AddUserComponent implements OnInit {
 
     this.usersService.updateUser(user).subscribe(()=>{
 
-      this.router.navigate(['admin/user-list']);
-
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Success',
+        detail: 'User is updated!'
+      });
+      timer(2000)
+        .toPromise()
+        .then(() => {
+          this.location.back();
+        });
     },
-    (error)=>{
-      console.log(error);
+    () => {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'User is not updated!'
+      });
     }
     )
 
@@ -93,8 +123,6 @@ export class AddUserComponent implements OnInit {
 
         this.currentUserId = params['id'];
         this.usersService.getUser(params['id']).subscribe((user) => {
-          this.usersForm['id'].setValue(user.id)
-          // this.usersForm['id'].setValue(user.id);
           this.usersForm['name'].setValue(user.name);
           this.usersForm['email'].setValue(user.email);
           this.usersForm['isAdmin'].setValue(user.isAdmin);

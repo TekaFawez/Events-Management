@@ -13,16 +13,21 @@ import { AddUserComponent } from './admin-page/admin-page/users/add-user/add-use
 import { UsersListComponent } from './admin-page/admin-page/users/users-list/users-list.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { LoginAdminComponent } from './admin-page/admin-page/login-admin/login-admin.component';
+import { DashboardComponent } from './admin-page/admin-page/dashboard/dashboard.component';
 
 
+import { ConfirmationService,MessageService } from 'primeng/api';
 
+import {ToastModule} from 'primeng/toast';
 
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
 
 @NgModule({
   declarations: [
 
     NotFoundComponent,
     UsersListComponent,
+    DashboardComponent,
     AddUserComponent,
     LoginComponent,
     RegisterComponent,
@@ -42,8 +47,11 @@ import { LoginAdminComponent } from './admin-page/admin-page/login-admin/login-a
     RouterModule,
     FormsModule,
 ReactiveFormsModule,
+ToastModule,
+ConfirmDialogModule
 
+  ],
+  providers: [MessageService,ConfirmationService]
 
-  ]
 })
 export class PagesModule { }

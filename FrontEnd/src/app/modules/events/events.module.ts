@@ -12,6 +12,11 @@ import {MatSortModule} from '@angular/material/sort';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
+
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
 
 export const routes: Routes = [
   {
@@ -41,11 +46,19 @@ MatTableModule,
 MatPaginatorModule,
 MatFormFieldModule,
 MatInputModule,
+MatSortModule,
+AccordionModule,
+ToastModule,
+ConfirmDialogModule
 
-MatSortModule
 
 
 
-  ]
+
+
+  ],
+
+providers: [MessageService,ConfirmationService]
+
 })
 export class EventsModule { }
