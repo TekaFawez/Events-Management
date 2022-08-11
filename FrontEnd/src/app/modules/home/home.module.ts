@@ -6,6 +6,7 @@ import {AccordionModule} from 'primeng/accordion';     //accordion and accordion
 
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
+import { BorderCaderDirective } from 'src/app/border-cader.directive';
 
 export const routes: Routes = [
   {
@@ -16,7 +17,9 @@ export const routes: Routes = [
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    //  BorderCaderDirective,
+
   ],
   imports: [
     RouterModule.forChild(routes),

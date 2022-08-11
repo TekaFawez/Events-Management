@@ -21,6 +21,7 @@ import { ConfirmationService,MessageService } from 'primeng/api';
 import {ToastModule} from 'primeng/toast';
 
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import { BorderCaderDirective } from '../border-cader.directive';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
     AdminHeaderComponent,
     ContactUsComponent,
     LoginAdminComponent,
+    BorderCaderDirective,
 
 
 

@@ -6,6 +6,12 @@ import { catchError, retry } from "rxjs/operators";;
 @Injectable({
   providedIn: 'root'
 })
+// Fawez TEKA
+//     https://www.linkedin.com/in/fawez-teka/
+//     https://github.com/TekaFawez
+//    Copyright © Fawez TEKA . All rights reserved.
+
+
 export class ContactService {
   path = " http://localhost:2000/api/v1/mail";
 
