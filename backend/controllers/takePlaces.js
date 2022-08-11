@@ -1,3 +1,8 @@
+// Fawez TEKA 
+//     https://www.linkedin.com/in/fawez-teka/
+//     https://github.com/TekaFawez
+//    Copyright © Fawez TEKA . All rights reserved.
+
 const { Event } = require('../models/event')
 
 

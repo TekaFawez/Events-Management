@@ -1,3 +1,9 @@
+// Fawez TEKA
+//     https://www.linkedin.com/in/fawez-teka/
+//     https://github.com/TekaFawez
+//    Copyright © Fawez TEKA . All rights reserved.
+
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EventsModule } from './events/events.module';
@@ -11,13 +17,15 @@ import {AccordionModule} from 'primeng/accordion';     //accordion and accordion
 
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
+import { BorderCaderDirective } from '../border-cader.directive';
 
 
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+  ],
   imports: [
     HomeModule,
 

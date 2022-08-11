@@ -1,4 +1,7 @@
-// import { UserModel } from "./user.model";
+// Fawez TEKA
+//     https://www.linkedin.com/in/fawez-teka/
+//     https://github.com/TekaFawez
+//    Copyright © Fawez TEKA . All rights reserved.
 
 export class EventModel {
     id?: string;

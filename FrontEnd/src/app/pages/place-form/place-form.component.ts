@@ -111,7 +111,6 @@ place.event_ID=event.id
 
 
 
-console.log(event.place)
   this.updateEvent(event)
   // this.dialogRef.close()
 
@@ -144,6 +143,8 @@ console.log(this.messageService)
 updateEvent(evnt:any){
 
   this.eventsService.updatePlaceEvent(evnt,this.data.id).subscribe(()=>{
+
+
 
     this.router.navigate(['event-user']);
 

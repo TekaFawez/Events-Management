@@ -1,3 +1,9 @@
+// Fawez TEKA
+//     https://www.linkedin.com/in/fawez-teka/
+//     https://github.com/TekaFawez
+//    Copyright © Fawez TEKA . All rights reserved.
+
+
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -27,6 +33,7 @@ import {AccordionModule} from 'primeng/accordion';     //accordion and accordion
 import { MessageService } from 'primeng/api';
 
 import { ToastModule } from 'primeng/toast';
+import { BorderCaderDirective } from './border-cader.directive';
 
 
 
@@ -40,6 +47,7 @@ import { ToastModule } from 'primeng/toast';
   declarations: [
     AppComponent,
     PlaceFormComponent,
+    // BorderCaderDirective,
 
 
 

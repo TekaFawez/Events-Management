@@ -1,7 +1,7 @@
 import { EventModel } from "../models/event.model";
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { Observable, Subject, tap } from "rxjs";
 @Injectable({
   providedIn: 'root'
 })
@@ -12,6 +12,10 @@ constructor(private http: HttpClient) {
 
 
 
+  }
+  private _refreshrequired= new Subject<void>() // use for refresh the place number when we save
+  get Refreshrequired(){
+    return this._refreshrequired
   }
   public getAllEvents(): Observable<EventModel[]>{
    return this.http.get<any>("http://localhost:2000/api/v1/events")
@@ -32,7 +36,11 @@ constructor(private http: HttpClient) {
     return this.http.put<EventModel>(`http://localhost:2000/api/v1/events/${event.id}`,event)
   }
   public updatePlaceEvent( data:any,id:String): Observable<any>{
-    return this.http.put<any>("http://localhost:2000/api/v1/updatePlace/"+id,data)
+    return this.http.put<any>("http://localhost:2000/api/v1/updatePlace/"+id,data).pipe(
+      tap(()=>{
+        this.Refreshrequired.next()
+      })
+    )
   }
 
 
