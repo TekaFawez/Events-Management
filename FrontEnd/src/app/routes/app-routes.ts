@@ -1,3 +1,9 @@
+// Fawez TEKA
+//     https://www.linkedin.com/in/fawez-teka/
+//     https://github.com/TekaFawez
+//    Copyright © Fawez TEKA . All rights reserved.
+
+
 import { Routes } from "@angular/router";
 import { AuthGuard } from "../core/auth/auth.guard";
 import { UserAuthGuard } from "../core/auth/user-auth.guard";

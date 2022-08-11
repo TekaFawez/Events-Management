@@ -1,3 +1,9 @@
+// Fawez TEKA
+//     https://www.linkedin.com/in/fawez-teka/
+//     https://github.com/TekaFawez
+//    Copyright © Fawez TEKA . All rights reserved.
+
+
 import { Component } from '@angular/core';
 
 @Component({

@@ -14,7 +14,7 @@
                     </div>
                 </div>
             </div>
-            <table class="table table-bordered">
+            <table class="table table-bordered" appBorderCader>
                 <thead>
                     <tr>
                         <th>name</th>
@@ -25,8 +25,8 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody *ngFor="let User of users">
-                    <tr>
+                <tbody *ngFor="let User of users" appBorderCader>
+                    <tr appBorderCader>
                         <td> {{ User.name }} </td>
                         <td>{{User.email}}</td>
 

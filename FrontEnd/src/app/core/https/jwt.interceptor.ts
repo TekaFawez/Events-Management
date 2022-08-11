@@ -1,3 +1,7 @@
+// Fawez TEKA
+//     https://www.linkedin.com/in/fawez-teka/
+//     https://github.com/TekaFawez
+//    Copyright © Fawez TEKA . All rights reserved.
 
 import { Injectable } from '@angular/core';
 import {
@@ -27,5 +31,5 @@ export class JwtInterceptor implements HttpInterceptor {
     }
     return next.handle(request);
   }
-} 
+}
 //next go to provides app.modules

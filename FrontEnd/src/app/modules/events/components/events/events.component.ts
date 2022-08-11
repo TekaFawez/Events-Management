@@ -24,7 +24,12 @@ export class EventsComponent implements OnInit {
   constructor(private eventsService:EventService,public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.getEvents()
+    this.getEvents();
+    this.eventsService.Refreshrequired.subscribe(()=>{
+      this.getEvents();
+
+
+    })
 
   }
   getEvents(){
