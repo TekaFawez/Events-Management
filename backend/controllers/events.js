@@ -3,8 +3,8 @@
 //     https://github.com/TekaFawez
 //    Copyright © Fawez TEKA . All rights reserved.
 
-const { Event } = require('../models/event')
-
+const  Event = require('../models/event')
+// const  {Event} = require('../models/event')
 const getEvent = async(req, res) => {
 
     const eventList = await Event.find()

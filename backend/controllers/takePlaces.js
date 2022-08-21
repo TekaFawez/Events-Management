@@ -3,7 +3,7 @@
 //     https://github.com/TekaFawez
 //    Copyright © Fawez TEKA . All rights reserved.
 
-const { Event } = require('../models/event')
+const  Event  = require('../models/event')
 
 
 
@@ -16,7 +16,7 @@ const takedPlace = async(req, res) => { //req qetting the information from front
     let takeEvent = new TakedPlace({
         nbPlace: req.body.nbPlace,
         event_ID: req.body.event_ID,
-
+ 
     })
 
 
