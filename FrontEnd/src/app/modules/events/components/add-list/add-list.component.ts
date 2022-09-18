@@ -43,7 +43,7 @@ export class AddListComponent implements OnInit {
     if (this.eventForm.invalid) {
       return;
     }
-    const evnt : EventModel= {
+    const event : EventModel= {
       id:this.currentUserId,
 
       name : this.eventsForm['name'].value,
@@ -53,14 +53,14 @@ export class AddListComponent implements OnInit {
 
     }
     if(this.editmode){
-      this.updateEvent(evnt)
+      this.updateEvent(event)
 
-    }else { this.creatEvent(evnt)
+    }else { this.creatEvent(event)
 
     }
   }
-    creatEvent(evnt:EventModel){
-    this.eventsService.postEvent(evnt).subscribe(()=>{
+    creatEvent(event:EventModel){
+    this.eventsService.postEvent(event).subscribe(()=>{
       this.messageService.add({
         severity: 'success',
         summary: 'Success',
@@ -82,9 +82,9 @@ export class AddListComponent implements OnInit {
 
 
   }
-  updateEvent(evnt:EventModel){
+  updateEvent(event:EventModel){
 
-    this.eventsService.updateEvent(evnt).subscribe(()=>{
+    this.eventsService.updateEvent(event).subscribe(()=>{
 
       this.messageService.add({
         severity: 'success',
@@ -119,10 +119,10 @@ export class AddListComponent implements OnInit {
         this.eventsService.getEvent(params['id']).subscribe((event) => {
           // this.eventsForm['id'].setValue(event.id)
           // this.eventsForm['id'].setValue(event.id);
-          this.eventsForm['name'].setValue(event.name);
-          this.eventsForm['place'].setValue(event.place);
-          this.eventsForm['price'].setValue(event.price);
-          this.eventsForm['date'].setValue(event.date);
+          this.eventsForm['name'].setValue(event?.name);
+          this.eventsForm['place'].setValue(event?.place);
+          this.eventsForm['price'].setValue(event?.price);
+          this.eventsForm['date'].setValue(event?.date);
 
         });
       }

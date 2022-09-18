@@ -24,13 +24,13 @@
                                 </div>
 
                                 <form class="row g-3 needs-validation" novalidate [formGroup]="userForm" (ngSubmit)="onSubmit()">
-                                    <div class="col-12">
+                                    <!-- <div class="col-12">
                                         <label for="yourName" class="form-label">Your ID</label>
                                         <input type="number" name="id" id="id" formControlName="id" class="form-control">
                                         <small *ngIf="usersForm['id'].invalid && isSubmitted" class="p-error">id is required</small
                                     >
 
-                                </div>
+                                </div> -->
                                     <div class="col-12">
                                         <label for="yourName" class="form-label">Your Name</label>
                                         <input type="text" name="name" id="name" class="form-control" formControlName="name">

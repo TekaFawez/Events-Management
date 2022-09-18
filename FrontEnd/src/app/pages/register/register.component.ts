@@ -21,7 +21,6 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
 
     this.userForm = this.formBuilder.group({//formbuilder service use and send to formControlName
-      id: ['', Validators.required],
       name: ['', Validators.required],
       password: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -36,7 +35,7 @@ export class RegisterComponent implements OnInit {
 
 
 
-      id: this.usersForm['id'].value,
+      // id: this.usersForm['id'].value,
       name: this.usersForm['name'].value,
       email: this.usersForm['email'].value,
       password:this.usersForm['password'].value,
