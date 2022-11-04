@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+
+
 import { UserService } from 'src/app/core/https/user.service';
 import { UserModel } from 'src/app/core/models/user.model';
 
@@ -16,6 +18,7 @@ export class RegisterComponent implements OnInit {
   editmode=false;
   currentUserId?: string;
   constructor(private usersService:UserService,private router:Router , private formBuilder: FormBuilder,
+   
     ) { }
 
   ngOnInit(): void {
@@ -25,6 +28,18 @@ export class RegisterComponent implements OnInit {
       password: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
     });
+  }
+  creatUser(user:UserModel){
+    this.usersService.postUser(user).subscribe(()=>{
+
+     
+      this.router.navigate(['/login'])
+    
+    },
+ 
+    )
+
+
   }
   onSubmit() {
     this.isSubmitted = true;
@@ -44,19 +59,8 @@ export class RegisterComponent implements OnInit {
     this.creatUser(user)
 
   }
-  creatUser(user:UserModel){
-    this.usersService.postUser(user).subscribe(()=>{
 
-      this.router.navigate(['/login']);
-
-    },
-    (error)=>{
-      console.log(error);
-    }
-    )
-
-
-  }
+  
 
 
 
