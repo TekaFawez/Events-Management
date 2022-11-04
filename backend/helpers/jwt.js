@@ -24,8 +24,6 @@ function authJwt() {
             { url: /\/api\/v1\/events(.*)/, methods: ['GET', , 'OPTIONS'] },
             '/api/v1/users/login',
             '/api/v1/mail',
-
-
             '/api/v1/users/register'
             // { url: /(.*)/ },
         ]
@@ -36,10 +34,10 @@ async function isRevoked(req, token) {
     // if (!payload.isAdmin) {
     //     done(null, true)
     // }
-    // done();
-    if (!token.payload.isAdmin) {
-        return true;
-    }
+    // done();  
+    if (!token.payload.isAdmin) { 
+        return true;  
+    } 
 
 };
 module.exports = authJwt;
