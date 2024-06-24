@@ -24,7 +24,7 @@ export class UserService {
      return this.http.get<UserModel>(`http://localhost:2000/api/v1/users/${UserId}`);
    }
    public postUser( User:UserModel): Observable<UserModel>{
-     return this.http.post<UserModel>("http://localhost:2000/api/v1/users",User)
+     return this.http.post<UserModel>("http://localhost:2000/api/v1/users/register",User)
 
    }
    public deleteUser(UserId:String):Observable<any>{

@@ -31,5 +31,5 @@ eventSchema.set('toJSON', {
 });
 
 
-// module.exports = mongoose.model('Event', eventSchema);
-exports.Event = mongoose.model('Event', eventSchema)
+ module.exports = mongoose.model('Event', eventSchema);
+// exports.Event = mongoose.model('Event', eventSchema)
